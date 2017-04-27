@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### PentagramSystem::Disassembly ###
+//	NeedItemCat: Category of an item that can be used for disassembly (Errtels only), refer to IGC_ItemList.xml
+//	NeedItemIndex: Index of an item that can be used for disassembly (Errtels only), refer to IGC_ItemList.xml
+//	ResultItemCat: Category of item which is disassembly result, refer to IGC_ItemList.xml
+//	ResultItemIndex: Index of item which is disassembly result, refer to IGC_ItemList.xml
+//	ResultItemCount: Count of disassembly result items
+//	Rate: Chance rate for disassembly success, n/10000
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<PentagramSystem>
+	<Disassembly NeedItemCat="12" NeedItemIndex="221" ResultItemCat="14" ResultItemIndex="290" ResultItemCount="1" Rate="10000" />
+	<Disassembly NeedItemCat="12" NeedItemIndex="231" ResultItemCat="14" ResultItemIndex="290" ResultItemCount="1" Rate="10000" />
+	<Disassembly NeedItemCat="12" NeedItemIndex="241" ResultItemCat="14" ResultItemIndex="290" ResultItemCount="1" Rate="10000" />
+	<Disassembly NeedItemCat="12" NeedItemIndex="251" ResultItemCat="14" ResultItemIndex="290" ResultItemCount="1" Rate="10000" />
+	<Disassembly NeedItemCat="12" NeedItemIndex="261" ResultItemCat="14" ResultItemIndex="290" ResultItemCount="1" Rate="10000" />
+</PentagramSystem>

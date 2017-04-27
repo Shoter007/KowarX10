@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### FormulaData::Exp::Formula ###
+//	ID: Next unique ID of formula, starts from 0
+//	Data: The formula data, no spaces
+//
+// ### FormulaData::ExcellentOption::Formula ###
+//	ID: Next unique ID of formula, starts from 0
+//	Data: The formula data, no spaces
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<FormulaData>
+	<Exp> <!-- Exp section is temporary not used -->
+		<Formula ID="0" Data="(x*15)+((((y*15)*0.2)/500)*(x-y))" />
+		<Formula ID="1" Data="(x*15)+((((y*15)*0.2)/500)*(x-y))" />
+   <!-- <Formula ID="2" Data="%d*%f*%d/%d" />
+		<Formula ID="3" Data="%d*(%d/%d)" />
+		<Formula ID="4" Data="%d*%f*%d/%d" /> -->
+	</Exp>
+
+	<ExcellentOption>
+		<Formula ID="0" Data="((x/2)*0.03)*(x/20)" />
+		<Formula ID="1" Data="(x/3)+(x-150)" />
+		<Formula ID="2" Data="(x*1.1)" />
+		<Formula ID="3" Data="(x*1.1)" />
+		<Formula ID="4" Data="(x*0.3)" />
+		<Formula ID="5" Data="(x/3.5)" />
+	</ExcellentOption>
+</FormulaData>

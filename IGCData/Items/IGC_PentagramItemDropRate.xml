@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### PentagramItemDrop::ServerElementRate::Server ### - Drop Rate of item of specified element per server (Code)
+//	Index: Unique Index in the section, starts from 1
+//	Code: Server Code of the server (corresponding to GameServer.ini settings)
+//	FireDrop: Chance of drop of item with Fire Element
+//	EarthDrop: Chance of drop of item with Earth Element
+//	WindDrop: Chance of drop of item with Wind Element
+//	DarknessDrop: Chance of drop of item with Darkness Element
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Element Drop Settings is n/10000. Sum of all Drop Rates in a row must be equal to 10000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### PentagramItemDrop::SocketRate::Socket ### - rate of chance to drop Pentagram item with specified count of sockets
+//	Count: Count of Sockets
+//	OpenRate: Chance rate to use specified record, n/10000 - sum in column must be equal to 10000
+//	OpenSet: Chance rate to select a record from records of same count, the OpenSet must be equal to 10000 for records of same Count value, n/10000
+//---------------------------------------------------------------------------------------------------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ OpenRate values must be set ascending - down from lowest to highest, repeated values are allowed
+//~~ OpenSet values for same Count must be set descending - down from highest to lowest, records of OpenSet = 0 are ignored, despite OpenRate is greater than 0
+//---------------------------------------------------------------------------------------------------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	SlotRate1: Chance of Pentagram item drop with 1 socket, n/10000
+//	SlotRate2: Chance of Pentagram item drop with 2 socket, n/10000
+//	SlotRate3: Chance of Pentagram item drop with 3 socket, n/10000
+//	SlotRate4: Chance of Pentagram item drop with 4 socket, n/10000
+//	SlotRate5: Chance of Pentagram item drop with 5 socket, n/10000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ How it works:
+//~~ 1) Basing on OpenRate system selects a record to use, e.g. selected record with Count = 3
+//~~ 2) Basing on OpenSet system makes a draw of a record among all records of Count = 3 (example)
+//~~ 3) Basing on SlotRateX system draws a final socket count to drop for an item
+//~~
+//~~ Each entry of same SocketCount represents different Pentagram sockets configuration and chance to get it
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### PentagramItemDrop::ItemDropRate::Monster ###
+//	Index: Index of a Monster to drop item from (IGC_MonsterList.xml)
+//	ItemCat1: Pentagram (1) item to drop, Category (IGC_ItemList.xml)
+//	ItemIndex1: Pentagram (1) item to drop, Index (IGC_ItemList.xml)
+//	DropRate1: Drop Rate for Item (1)
+//	ItemCat2: Pentagram (2) item to drop, Category
+//	ItemIndex2: Pentagram (2) item to drop, Index
+//	DropRate2: Drop Rate for Item (2)
+//	ItemCat3: Pentagram (3) item to drop, Category
+//	ItemIndex3: Pentagram (3) item to drop, Index
+//	DropRate3: Drop Rate for Item (3)
+//	ItemCat4: Pentagram (4) item to drop, Category
+//	ItemIndex4: Pentagram (4) item to drop, Index
+//	DropRate4: Drop Rate for Item (4)
+//	ItemCat5: Pentagram (5) item to drop, Category
+//	ItemIndex5: Pentagram (5) item to drop, Index
+//	DropRate5: Drop Rate for Item (5)
+//	ItemCat6: Pentagram (6) item to drop, Category
+//	ItemIndex6: Pentagram (6) item to drop, Index
+//	DropRate6: Drop Rate for Item (6)
+//	Name: Monster Name the item drops from, used for logs and in-file description purpose
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If sum of all DropRateX in a row is not equal to 10000 then it is possible that no item will be dropped
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ NOTE ~ ServerCode must match configuration of \IGCData\IGC_MapServerInfo.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<PentagramItemDrop>
+	<ServerElementRate>
+		<Server Index="1" Code="0"  FireDrop="2000" WaterDrop="2000" EarthDrop="2000" WindDrop="2000" DarknessDrop="2000" /> <!-- Total must be equal to 10000 -->
+		<Server Index="2" Code="12" FireDrop="2000" WaterDrop="2000" EarthDrop="2000" WindDrop="2000" DarknessDrop="2000" /> <!-- Total must be equal to 10000 -->
+		<Server Index="3" Code="13" FireDrop="2000" WaterDrop="2000" EarthDrop="2000" WindDrop="2000" DarknessDrop="2000" /> <!-- Total must be equal to 10000 -->
+		<Server Index="4" Code="14" FireDrop="2000" WaterDrop="2000" EarthDrop="2000" WindDrop="2000" DarknessDrop="2000" /> <!-- Total must be equal to 10000 -->
+	</ServerElementRate>
+	
+	<SocketRate>
+		<Socket Count="5" OpenRate="10"	  OpenSet="9990"  SlotRate1="10000" SlotRate2="10000" SlotRate3="10000" SlotRate4="10000" SlotRate5="100" />
+		<Socket Count="5" OpenRate="10"	  OpenSet="10"    SlotRate1="10000" SlotRate2="10000" SlotRate3="10000" SlotRate4="10000" SlotRate5="10000" />
+		<Socket Count="5" OpenRate="10"	  OpenSet="0"     SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="5" OpenRate="10"	  OpenSet="0"     SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="5" OpenRate="10"	  OpenSet="0"     SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="4" OpenRate="15"	  OpenSet="9900"  SlotRate1="10000" SlotRate2="10000" SlotRate3="5000"  SlotRate4="800"   SlotRate5="0" />
+		<Socket Count="4" OpenRate="15"	  OpenSet="100"   SlotRate1="10000" SlotRate2="10000" SlotRate3="10000" SlotRate4="10000" SlotRate5="0" />
+		<Socket Count="4" OpenRate="15"	  OpenSet="0"     SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="4" OpenRate="15"	  OpenSet="0"     SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="3" OpenRate="70"	  OpenSet="5000"  SlotRate1="10000" SlotRate2="10000" SlotRate3="6000"  SlotRate4="0"     SlotRate5="0" />
+		<Socket Count="3" OpenRate="70"	  OpenSet="3000"  SlotRate1="10000" SlotRate2="6000"  SlotRate3="10000" SlotRate4="0"     SlotRate5="0" />
+		<Socket Count="3" OpenRate="70"	  OpenSet="2000"  SlotRate1="10000" SlotRate2="6000"  SlotRate3="4000"  SlotRate4="0"     SlotRate5="0" />
+		<Socket Count="3" OpenRate="70"	  OpenSet="0"	  SlotRate1="0"     SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" /> <!-- OpenRate filler -->
+		<Socket Count="2" OpenRate="1000" OpenSet="10000" SlotRate1="10000" SlotRate2="4000"  SlotRate3="0"		SlotRate4="0"     SlotRate5="0" />
+		<Socket Count="1" OpenRate="8610" OpenSet="10000" SlotRate1="10000" SlotRate2="0"     SlotRate3="0"     SlotRate4="0"     SlotRate5="0" />
+	</SocketRate>
+	
+	<ItemDropRate>
+		<Monster Index="45"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Bahamut" />
+		<Monster Index="46"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Vepar" />
+		<Monster Index="47"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Valkyrie" />
+		<Monster Index="48"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Lizard King" />
+		<Monster Index="51"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Great Bahamut" />
+		<Monster Index="52"  ItemCat1="12" ItemIndex1="200" DropRate1="100"  ItemCat2="12" ItemIndex2="201" DropRate2="50"	 ItemCat3="-1" ItemIndex3="-1"  DropRate3="0"    ItemCat4="-1" ItemIndex4="-1"  DropRate4="0"    ItemCat5="-1" ItemIndex5="-1"  DropRate5="0"    ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Silver Valkyrie" />
+		<Monster Index="586" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Devilfairy" />
+		<Monster Index="587" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Elemental Beast" />
+		<Monster Index="588" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Elemental Knight" />
+		<Monster Index="589" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Ubaid Devilfairy" />
+		<Monster Index="590" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Ubaid Elemental Beast" />
+		<Monster Index="591" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="200" DropRate2="1500" ItemCat3="12" ItemIndex3="201" DropRate3="1250" ItemCat4="12" ItemIndex4="202" DropRate4="1000" ItemCat5="12" ItemIndex5="203" DropRate5="1000" ItemCat6="12" ItemIndex6="204" DropRate6="1000" ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Ubaid Elemental Knight" />
+		<Monster Index="592" ItemCat1="12" ItemIndex1="145" DropRate1="5000" ItemCat2="12" ItemIndex2="151" DropRate2="300"  ItemCat3="12" ItemIndex3="200" DropRate3="2000" ItemCat4="12" ItemIndex4="201" DropRate4="1750" ItemCat5="12" ItemIndex5="202" DropRate5="1500" ItemCat6="12" ItemIndex6="203" DropRate6="1500" ItemCat7="12" ItemIndex7="204" DropRate7="1500"  ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Undine" />
+		<Monster Index="593" ItemCat1="12" ItemIndex1="145" DropRate1="5000" ItemCat2="12" ItemIndex2="151" DropRate2="300"  ItemCat3="12" ItemIndex3="200" DropRate3="2000" ItemCat4="12" ItemIndex4="201" DropRate4="1750" ItemCat5="12" ItemIndex5="202" DropRate5="1500" ItemCat6="12" ItemIndex6="203" DropRate6="1500" ItemCat7="12" ItemIndex7="204" DropRate7="1500"  ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Salamander" />
+		<Monster Index="594" ItemCat1="12" ItemIndex1="145" DropRate1="5000" ItemCat2="12" ItemIndex2="151" DropRate2="300"  ItemCat3="12" ItemIndex3="200" DropRate3="2000" ItemCat4="12" ItemIndex4="201" DropRate4="1750" ItemCat5="12" ItemIndex5="202" DropRate5="1500" ItemCat6="12" ItemIndex6="203" DropRate6="1500" ItemCat7="12" ItemIndex7="204" DropRate7="1500"  ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Sylphid" />
+		<Monster Index="595" ItemCat1="12" ItemIndex1="145" DropRate1="5000" ItemCat2="12" ItemIndex2="151" DropRate2="300"  ItemCat3="12" ItemIndex3="200" DropRate3="2000" ItemCat4="12" ItemIndex4="201" DropRate4="1750" ItemCat5="12" ItemIndex5="202" DropRate5="1500" ItemCat6="12" ItemIndex6="203" DropRate6="1500" ItemCat7="12" ItemIndex7="204" DropRate7="1500"  ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Gnome" />
+		<Monster Index="596" ItemCat1="12" ItemIndex1="145" DropRate1="5000" ItemCat2="12" ItemIndex2="151" DropRate2="300"  ItemCat3="12" ItemIndex3="200" DropRate3="2000" ItemCat4="12" ItemIndex4="201" DropRate4="1750" ItemCat5="12" ItemIndex5="202" DropRate5="1500" ItemCat6="12" ItemIndex6="203" DropRate6="1500" ItemCat7="12" ItemIndex7="204" DropRate7="1500"  ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Hellraiser" />
+		<Monster Index="608" ItemCat1="12" ItemIndex1="202" DropRate1="1000" ItemCat2="12" ItemIndex2="203" DropRate2="500"  ItemCat3="12" ItemIndex3="204" DropRate3="500"  ItemCat4="12" ItemIndex4="205" DropRate4="500"  ItemCat5="12" ItemIndex5="206" DropRate5="50"   ItemCat6="12" ItemIndex6="207" DropRate6="20"   ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Debenter Devilfairy" />					
+		<Monster Index="609" ItemCat1="12" ItemIndex1="202" DropRate1="1000" ItemCat2="12" ItemIndex2="203" DropRate2="500"  ItemCat3="12" ItemIndex3="204" DropRate3="500"  ItemCat4="12" ItemIndex4="205" DropRate4="500"  ItemCat5="12" ItemIndex5="206" DropRate5="50"   ItemCat6="12" ItemIndex6="207" DropRate6="20"   ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Deventer Elemental Beast" />						
+		<Monster Index="610" ItemCat1="12" ItemIndex1="202" DropRate1="1000" ItemCat2="12" ItemIndex2="203" DropRate2="500"  ItemCat3="12" ItemIndex3="204" DropRate3="500"  ItemCat4="12" ItemIndex4="205" DropRate4="500"  ItemCat5="12" ItemIndex5="206" DropRate5="50"   ItemCat6="12" ItemIndex6="207" DropRate6="20"   ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Debenter Elemental Knight" />							
+		<Monster Index="611" ItemCat1="12" ItemIndex1="208" DropRate1="1000" ItemCat2="12" ItemIndex2="209" DropRate2="1000" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Sellihoden" />
+		<Monster Index="612" ItemCat1="12" ItemIndex1="208" DropRate1="1000" ItemCat2="12" ItemIndex2="209" DropRate2="1000" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Ukanva" />
+		<Monster Index="613" ItemCat1="12" ItemIndex1="208" DropRate1="1000" ItemCat2="12" ItemIndex2="209" DropRate2="1000" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Silla" />
+		<Monster Index="614" ItemCat1="12" ItemIndex1="208" DropRate1="1000" ItemCat2="12" ItemIndex2="209" DropRate2="1000" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Normus" />
+		<Monster Index="615" ItemCat1="12" ItemIndex1="208" DropRate1="1000" ItemCat2="12" ItemIndex2="209" DropRate2="1000" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Muff" />
+		<Monster Index="670" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="1500" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Uruk Devil Fairy" />
+		<Monster Index="671" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="1500" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Uruk Elemental Beast" />
+		<Monster Index="672" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="1500" ItemCat3="12" ItemIndex3="210" DropRate3="1000" ItemCat4="12" ItemIndex4="211" DropRate4="1000" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Uruk Elemental Knight" />
+		<Monster Index="713" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="2000" ItemCat3="12" ItemIndex3="210" DropRate3="1500" ItemCat4="12" ItemIndex4="211" DropRate4="1500" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Nars Devil Fairy" />
+		<Monster Index="714" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="2000" ItemCat3="12" ItemIndex3="210" DropRate3="1500" ItemCat4="12" ItemIndex4="211" DropRate4="1500" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Nars Elemental Beast" />
+		<Monster Index="715" ItemCat1="12" ItemIndex1="144" DropRate1="5000" ItemCat2="12" ItemIndex2="209" DropRate2="2000" ItemCat3="12" ItemIndex3="210" DropRate3="1500" ItemCat4="12" ItemIndex4="211" DropRate4="1500" ItemCat5="12" ItemIndex5="144" DropRate5="5000" ItemCat6="-1" ItemIndex6="-1"  DropRate6="0"    ItemCat7="-1" ItemIndex7="-1"  DropRate7="0" 	   ItemCat8="-1" ItemIndex8="-1" DropRate8="0" ItemCat9="-1" ItemIndex9="-1" DropRate9="0" ItemCat10="-1" ItemIndex10="-1" DropRate10="0" Name="Nars Elemental Knight" />
+	</ItemDropRate>
+</PentagramItemDrop>

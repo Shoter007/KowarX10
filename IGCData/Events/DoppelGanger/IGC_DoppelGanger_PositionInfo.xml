@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igc-network.com
+// == (C) 2010-2015 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### DoppelGanger::PositionInfo::Map ###
+//	Number: Number of map the settings apply to
+//	Name: Used for in-file description and logging purpose
+//
+// ### DoppelGanger::PositionInfo::Map::Pos ###
+//	StartX: X Coordinate of start range position of event monsters spawn, StartX must be greater than StartY
+//	StartY: Y Coordinate of start range position of event monsters spawn, EndX must be greater than EndY
+//	EndX: X Coordinate of end range position of event monsters spawn
+//	EndY: Y Coordinate of end range position of event monsters spawn
+//
+// ### DoppelGanger::WaitingZones::Map ###
+//	Number: Number of map the settings applies to
+//	StartX: X Coordinate of start range position of event waiting area, StartX must be greater than StartY
+//	StartY: Y Coordinate of start range position of event waiting area, EndX must be greater than EndY
+//	EndX: X Coordinate of end range position of event waiting area
+//	EndY: Y Coordinate of end range position of event waiting area
+//	Name: Used for in-file description and logging purpose
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	Map Numbers:
+//		~ 65: Ice Map
+//		~ 66: Fire
+//		~ 67: Water
+//		~ 68: Ground
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<DoppelGanger>
+	<PositionInfo>
+		<Map Number="82" Name="Ice">
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+		</Map>
+		<Map Number="83" Name="Fire">
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+		</Map>
+		<Map Number="84" Name="Water">
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+		</Map>
+		<Map Number="85" Name="Ground">
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+			<Pos StartX="126" StartY="126" EndX="126" EndY="126" />
+		</Map>
+	</PositionInfo>
+	<WaitingZones>
+		<Map Number="82" StartX="65" StartY="60" EndX="70" EndY="73" Name="Ice" />
+		<Map Number="83" StartX="63" StartY="185" EndX="76" EndY="191" Name="Fire" />
+		<Map Number="84" StartX="188" StartY="180" EndX="194" EndY="194" Name="Water" />
+		<Map Number="85" StartX="182"  StartY="66" EndX="194"  EndY="72" Name="Ground" />
+	</WaitingZones>
+</DoppelGanger>
